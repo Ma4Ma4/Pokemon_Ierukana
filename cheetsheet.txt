@@ -1,0 +1,23 @@
+npx tailwindcss -i src/input.css -o dist/output.css --watch
+
+    const images = [
+    '../img/type_icon/normal.png',
+    '../img/type_icon/fire.png',
+    '../img/type_icon/water.png',
+    '../img/type_icon/erectric.png',
+    '../img/type_icon/grass.png',
+    '../img/type_icon/ice.png',
+    '../img/type_icon/fighting.png',
+    '../img/type_icon/poison.png',
+    '../img/type_icon/ground.png',
+    '../img/type_icon/flying.png',
+    '../img/type_icon/psychic.png',
+    '../img/type_icon/bug.png',
+    '../img/type_icon/rock.png',
+    '../img/type_icon/ghost.png',
+    '../img/type_icon/dragon.png',
+    '../img/type_icon/dark.png',
+    '../img/type_icon/steel.png',
+    '../img/type_icon/fairy.png'
+    ];
+
