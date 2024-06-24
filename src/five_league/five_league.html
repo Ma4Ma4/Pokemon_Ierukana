@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../dist/output.css" rel="stylesheet" type="text/css" />
+    <script src="./scene.js" async></script>
+    <title>ポケまつり-ファイブリーグ</title>
+  </head>
+  <body>
+    <div class="bg-teal-200/50 py-6 sm:py-8 lg:py-12">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-8 border-2 border-yellow-400 bg-yellow-100 p-4 rounded-md">
+        <h2 class="mb-8 text-center text-4xl font-bold text-gray-800 md:mb-12 lg:text-6xl">ファイブリーグ</h2>
+        <p class="mx-auto max-w-screen-md text-gray-700 md:text-lg mb-4">
+          答えが<strong>5文字</strong>のクイズにみんなで力を合わせて挑戦だ! <br>
+          シンキングタイムは<strong>1分</strong>!(様子見て変動)<br>
+          <strong>解答順は自由</strong>(相談して決めてもOK! 自慢の技向こう見ず)! <br>
+          シンキングタイム中に出題者の個チャへ解答を送信してください。<br>
+          出題者の代わりに<strong>ましましGPTがムラっけで一文字を先に解答</strong>します。あとの4文字を完答してね<br>
+        </p>
+      </div>   
+      <!--- 問題選択ボタン群-->
+      <div class="mx-auto max-w-screen-md my-4 space-x-4 ">
+        <button 
+          class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+          onclick="setQ(1)"
+        >
+          第1問
+        </button>
+        <button 
+        class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+        onclick="setQ(2)"
+      >
+          第2問
+        </button>
+        <button 
+        class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+        onclick="setQ(3)"
+      >
+          第3問
+        </button>
+        <button 
+        class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+        onclick="setQ(4)"
+      >
+          第4問
+        </button>
+        <button 
+        class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+        onclick="setQ(5)"
+      >
+          第5問
+        </button>
+        <button 
+        class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+        onclick="setQ(6)"
+      >
+          第6問
+        </button>
+        <button 
+        class="inline-flex h-12 items-center justify-center rounded-md bg-purple-900 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+        onclick="setQ(7)"
+      >
+          第7問
+        </button>
+      </div>
+      <!--- 問題文欄-->
+      <div class="mx-auto max-w-screen-md">
+        <h1 id="q_title" class="text-2xl"></h1>
+        <div id="question" class="text-xl"></div>
+        <div id="q_img" class="img mx-auto max-w-screen-md">
+          <img id="question_image" src="../img/five_league.png" alt="問題画像" />
+        </div>
+      </div>
+      <!--- 解答者名入力欄 -->
+      <div class="flex justify-center space-x-4 my-4">
+        <input type="text" class="w-32 text-center text-4xl border border-gray-300 rounded" />
+        <input type="text" class="w-32 text-center text-4xl border border-gray-300 rounded" />
+        <input type="text" class="w-32 text-center text-4xl border border-gray-300 rounded" />
+        <input type="text" class="w-32 text-center text-4xl border border-gray-300 rounded" />
+        <input type="text" class="w-32 text-center text-4xl border border-gray-300 rounded" />
+      </div>
+      <!--- 解答入力欄 -->
+      <div class="flex justify-center space-x-4 my-2">
+        <input type="text" maxlength="1" id="1_char" class="aspect-square w-32 h-32 text-center text-8xl text-white border border-gray-300 rounded bg-blue-500" />
+        <input type="text" maxlength="1" id="2_char" class="aspect-square w-32 h-32 text-center text-8xl text-white border border-gray-300 rounded bg-blue-500" />
+        <input type="text" maxlength="1" id="3_char" class="aspect-square w-32 h-32 text-center text-8xl text-white border border-gray-300 rounded bg-blue-500" />
+        <input type="text" maxlength="1" id="4_char" class="aspect-square w-32 h-32 text-center text-8xl text-white border border-gray-300 rounded bg-blue-500" />
+        <input type="text" maxlength="1" id="5_char" class="aspect-square w-32 h-32 text-center text-8xl text-white border border-gray-300 rounded bg-blue-500" />
+      </div>
+      <!--- 採点ボタン-->
+      <div class="flex justify-center mx-auto max-w-screen-md my-4">
+        <button 
+          class="inline-flex h-12 items-center justify-center rounded-md bg-red-500 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+          onclick="check_ans()"
+        >
+          解答をチェック
+        </button>
+    </div>
+  </body>
+</html>
