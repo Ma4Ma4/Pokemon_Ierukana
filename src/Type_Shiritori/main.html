@@ -1,13 +1,71 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../../dist/output.css" rel="stylesheet" type="text/css" />
-    <title>ポケまつり-test2</title>
+    <title>ポケまつり-タイプしりとり</title>
+    <style>
+      .dimmed {
+        filter: brightness(50%);
+        transition: filter 0.3s ease;
+      }
+
+      .dimmed:hover {
+        filter: brightness(30%);
+      }
+    </style>
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline text-blue-900">22222222!</h1>
-    <div id="root">
+    <div class="bg-lime-700/50 py-6 sm:py-8 lg:py-12">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-8 border-2 border-yellow-400 bg-yellow-100 p-4 rounded-md">
+        <h2 class="mb-8 text-center text-4xl font-bold text-gray-800 md:mb-12 lg:text-6xl">ポケモンタイプしりとり</h2>
+        <p class="mx-auto max-w-screen-md text-gray-700 md:text-lg mb-4">
+          ポケモン名しりとりでガチタイマンバトル!<br>
+          相手よりも先に全18タイプのポケモンを答えて勝利しよう<br>
+          ターン制限時間は<strong>20秒</strong>! (オーバーすると相手に解答権が渡ります)<br>
+          フォルムチェンジ等で<strong>複数のタイプが存在</strong>するポケモンは爆アドのチャンス! <br>
+        </p>
+        </div>
+        <!-- ここから表とテキストボックスを追加 -->
+        <div class="px-4 py-2">
+          <div class="flex justify-center space-x-4">
+            <div>
+              <input type="text" id="pl_1" placeholder="トレーナー名を入力" class="mb-2 p-2 border border-gray-400 rounded w-full" />
+              <table id="table1" class="border-collapse border border-gray-400 bg-lime-800">
+                <tbody>
+                  <!-- 3x6の表 -->
+                  <tr><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td></tr>
+                  <tr><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td></tr>
+                  <tr><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td></tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <!-- タイマーと開始ボタンを追加 -->
+            <div class="timer text-center my-4">
+              <div id="timer-display" class="text-white text-2xl font-bold">20</div>
+              <button id="start-button" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">START</button>
+            </div>
+
+            <div>
+              <input type="text" id="pl_2" placeholder="トレーナー名を入力" class="mb-2 p-2 border border-gray-400 rounded w-full" />
+              <table id="table2" class="border-collapse border border-gray-400 bg-amber-800">
+                <tbody>
+                  <!-- 3x6の表 -->
+                  <tr><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td></tr>
+                  <tr><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td></tr>
+                  <tr><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td><td class="border border-gray-400 p-2"></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- ここまで表とテキストボックスを追加 -->
+      </div>  
     </div>
+
+    <!-- JavaScriptファイルを読み込む -->
+    <script src="scene.js"></script>
   </body>
 </html>
